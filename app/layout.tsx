@@ -1,22 +1,25 @@
 import type { Metadata } from "next";
-// import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
-import localFont from 'next/font/local'
+
+import { Geist, Geist_Mono, Outfit } from "next/font/google";
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const outfit = Outfit({
+  variable: "--font-outfit",
+  subsets: ["latin"],
+});
 
 
-const myFont = localFont({ src: '../public/berlinsansfb_reg.ttf' });
-
-
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
 
 export const metadata: Metadata = {
   title: "The Forge",
@@ -29,10 +32,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" 
+    className={`${geistSans.variable} ${geistMono.variable} ${outfit.variable}`}
+    >
       <body
         // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        className={myFont.className}
+
       >
         <Header/>
         <div className="w-full container mx-auto mt-6">{children}</div>
