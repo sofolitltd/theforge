@@ -4,6 +4,7 @@ import Image from "next/image";
 import reyad from "@/public/reyad.png";
 import sabbir from "@/public/sabbir.png";
 import sabbir_hassan from "@/public/sabbir_hassan.jpeg";
+import Link from "next/link";
 
 export const HeroSection = () => {
   return (
@@ -14,24 +15,26 @@ export const HeroSection = () => {
       </h1>
 
       {/*  */}
-      <h3 className="">
+      <p className="">
         We help Founders, Business owners, Startups, and Real estate agents
         dominate LinkedIn, craft high-converting websites, and scale with
         powerful content and branding
-      </h3>
+      </p>
 
       {/*  */}
-      <div className=" flex item-center justify-items-center gap-3 border-2 border-gray-200 rounded-md bg-white text-black px-6 py-2 w-fit">
-        {/*  */}
+      <Link href="/contact">
+        <div className=" flex item-center justify-items-center gap-3 border-2 border-gray-200 rounded-md bg-white !text-black px-6 py-2 w-fit">
+          {/*  */}
 
-        <PhoneCall width={20} height={20} />
-        {/*  */}
-        <p>Book a Discovery Call</p>
-      </div>
+          <PhoneCall width={20} height={20} />
+          {/*  */}
+          <p className=" text-[#0a0a0a]!">Book a discovery call</p>
+        </div>
+      </Link>
 
       {/*  */}
 
-      <div className=" flex gap-6 items-end">
+      <div className=" flex gap-6 items-end mt-6">
         {/*  */}
         <div className=" flex">
           <Image
@@ -53,16 +56,16 @@ export const HeroSection = () => {
 
         {/*  */}
         <div className="">
-          
           <div className=" flex">
-            <Star size={16} fill="#fff" stroke="0" />
-            <Star size={16} fill="#fff" stroke="0" />
-            <Star size={16} fill="#fff" stroke="0" />
-            <Star size={16} fill="#fff" stroke="0" />
-            <Star size={16} fill="#fff" stroke="0" />
-    
+            <Star size={16} fill="#ffd250" stroke="0" />
+            <Star size={16} fill="#ffd250" stroke="0" />
+            <Star size={16} fill="#ffd250" stroke="0" />
+            <Star size={16} fill="#ffd250" stroke="0" />
+            <Star size={16} fill="#ffd250" stroke="0" />
           </div>
-          <p className=" text-xs font-extralight mt-1">Trusted by industry leaders</p>
+          <p className=" text-sm font-extralight mt-1">
+            Trusted by industry leaders
+          </p>
         </div>
       </div>
     </div>

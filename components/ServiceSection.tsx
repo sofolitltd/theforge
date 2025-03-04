@@ -64,7 +64,7 @@ const services: Service[] = [
 export const ServiceSection = () => {
   return (
     <div className="">
-      <h1 className="text-2xl font-bold mb-6">What we do best & love</h1>
+      <h1 className="text-2xl mb-6">What we do best & love</h1>
 
       {/*  */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-10 border-1 border-slate-50/10 rounded-md p-4">
@@ -72,16 +72,16 @@ export const ServiceSection = () => {
           <div key={index} className="border border-slate-50/10 rounded-md p-4">
             <div className="flex gap-4 items-center">
               <Image src={service.image} alt={service.title} height={48} />
-              <h1 className="text-md font-bold">{service.title}</h1>
+              <h1 className="text-md ">{service.title}</h1>
             </div>
 
-            <p className="text-xs my-4 h-7">{service.description}</p>
+            <p className="text-md font-light my-4">{service.description}</p>
 
             <div className="flex gap-2 flex-wrap">
               {service.tags.map((tag, tagIndex) => (
                 <div
                   key={tagIndex}
-                  className="bg-gray-50/10 rounded-md py-1 px-2 w-fit flex items-center gap-2 text-xs"
+                  className="bg-gray-50/10 rounded-md py-1 px-2 w-fit flex items-center gap-2 text-sm"
                 >
                   <div className="rounded-full bg-slate-200 size-1"></div>
                   <p>{tag}</p>

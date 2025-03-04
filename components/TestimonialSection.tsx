@@ -8,12 +8,12 @@ import React, {
 } from "react";
 import Image, { StaticImageData } from "next/image";
 import person from "@/public/person.png";
-import sabbir from '@/public/sabbir.png'
-import orange_crew from '@/public/orange_crew.png'
-import sofol_it from '@/public/sofol_it.png'
-import genxsolutions_logo from '@/public/genxsolutions_logo.png'
-import sabbir_hassan from '@/public/sabbir_hassan.jpeg'
-import design_mingle_logo from '@/public/design_mingle_logo.png'
+import sabbir from "@/public/sabbir.png";
+import orange_crew from "@/public/orange_crew.png";
+import sofol_it from "@/public/sofol_it.png";
+import genxsolutions_logo from "@/public/genxsolutions_logo.png";
+import sabbir_hassan from "@/public/sabbir_hassan.jpeg";
+import design_mingle_logo from "@/public/design_mingle_logo.png";
 
 // Define a type for the testimonial data
 type Testimonial = {
@@ -79,7 +79,6 @@ const testimonials: Testimonial[] = [
     text: "I had the pleasure of working with The Forge for my website copy and designing, and I couldn't be more impressed. From the very beginning, their dedication and professionalism stood out. They took the time to understand my vision, brand, and audience, crafting copy that felt both strategic and effortless.",
   },
 ];
-
 
 export const TestimonialSection: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
@@ -151,11 +150,11 @@ export const TestimonialSection: React.FC = () => {
       goToNext();
     }, 3000); // Change testimonial every 3 seconds
     return () => clearInterval(interval);
-  }, [currentIndex]);
+  }, [goToNext]);
 
   return (
     <div className="max-w-full mx-auto py-10 text-center">
-      <h1 className="text-2xl font-bold mb-6">What our clients say</h1>
+      <h1 className="text-2xl mb-6">What our clients say</h1>
 
       <div
         className="relative py-6 rounded-md w-full mx-auto group"
@@ -186,21 +185,23 @@ export const TestimonialSection: React.FC = () => {
           {[...testimonials, ...testimonials].map((testimonial, index) => (
             <div
               key={index}
-              className="flex-shrink-0 w-full sm:w-[calc(50%-1rem)] md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1rem)] border border-slate-100/5 p-3 rounded-md"
+              className="flex-shrink-0 w-full sm:w-[calc(50%-1rem)] md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1rem)] border border-slate-100/5 p-5 rounded-lg bg-black/10 backdrop-blur-md"
             >
               <div className="flex justify-between items-center mb-4">
                 <div className=" text-start">
-                  <h3 className="font-bold" onDragStart={handlePreventSelect}>
+                  <h3 className=" test-lg" onDragStart={handlePreventSelect}>
                     {testimonial.name}
                   </h3>
-                  <p className="text-xs mt-1" onDragStart={handlePreventSelect}>
+                  <p
+                    className="text-base font-light mt-1"
+                    onDragStart={handlePreventSelect}
+                  >
                     {testimonial.position}
                   </p>
                 </div>
                 <Image
                   src={testimonial.image}
                   alt={testimonial.name}
-        
                   height={72}
                   width={72}
                   className="rounded-full bg-white "
@@ -209,10 +210,13 @@ export const TestimonialSection: React.FC = () => {
                 />
               </div>
               <div
-                className="border border-slate-100/5 rounded-md p-2 text-xs leading-tight"
+                className=" bg-black/10 border border-slate-100/5 rounded-md p-3 text-sm font-light text-left"
                 onDragStart={handlePreventSelect}
               >
-                 {`"${testimonial.text}"`}
+                <p>
+
+                {`"${testimonial.text}"`}
+                </p>
               </div>
             </div>
           ))}

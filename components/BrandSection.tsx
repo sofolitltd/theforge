@@ -32,7 +32,7 @@ const services: Brands[] = [
 export const BrandSection = () => {
   return (
     <div className="">
-      <h1 className="text-2xl font-bold mb-6 text-center">Trusted by industry leaders</h1>
+      <h1 className="text-2xl mb-6 text-center">Trusted by industry leaders</h1>
 
       {/*  */}
       <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6 mt-10">

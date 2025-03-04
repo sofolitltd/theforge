@@ -1,7 +1,6 @@
 import React from "react";
 import dm from "@/public/dm.svg";
 import Image from "next/image";
-import Link from "next/link";
 
 // Define the type for services
 type Work = {
@@ -29,10 +28,11 @@ const works: Work[] = [
   },
 ];
 
-export const WorkSection = () => {
+
+export default function page()  {
   return (
-    <div className=" items-center justify-center w-full bg ">
-      <h1 className="text-2xl mb-6 text-center">Our work speaks for itself</h1>
+    <div className=" px-4 items-center justify-center w-full mb-32">
+      <h1 className="text-2xl mb-6 text-start">Our Work</h1>
 
       {/*  */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-10 ">
@@ -74,15 +74,7 @@ export const WorkSection = () => {
         ))}
       </div>
 
-      {/* all btn */}
-      <div className="  mt-10 mx-auto w-fit">
-        <Link
-          href="/work"
-          className=" text-base font-outfit px-8 py-2.5 border-2 border-gray-300 rounded-md bg-white text-black "
-        >
-          View all projects
-        </Link>
-      </div>
+  
     </div>
   );
 };

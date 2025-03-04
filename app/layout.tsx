@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
+import Footer  from "@/components/Footer";
 
 import { Geist, Geist_Mono, Outfit } from "next/font/google";
 
@@ -40,8 +41,8 @@ export default function RootLayout({
 
       >
         <Header/>
-        <div className="w-full container mx-auto mt-6">{children}</div>
-        {/* <Footer/> */}
+        <div className="w-full container mx-auto max-w-7xl mt-6">{children}</div>
+        <Footer/>
       </body>
     </html>
   );
