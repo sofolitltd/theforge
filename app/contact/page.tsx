@@ -43,7 +43,7 @@ export default function Contact() {
 
   return (
     <div className="text-white flex flex-col items-center p-6 font-outfit mb-32">
-      <div className=" items-start w-full max-w-3xl">
+      <div className=" items-start w-full max-w-4xl">
         <h2 className="text-2xl">Let’s discuss the details</h2>
         <p className=" mb-8">Our friendly team would love to hear from you.</p>
 
@@ -52,7 +52,7 @@ export default function Contact() {
       {/* Contact Form */}
       <form
         onSubmit={handleSubmit}
-        className="  w-full max-w-3xl"
+        className="  w-full max-w-4xl p-10 bg-black/20 border-1 border-slate-50/5  rounded-lg"
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {/* Name */}
@@ -64,7 +64,7 @@ export default function Contact() {
               value={formData.name}
               onChange={handleChange}
               placeholder="Jane Smith"
-              className="w-full bg-[#0d0d0d] border border-gray-700 p-2 rounded-md mt-1 text-white"
+              className="w-full bg-neutral-950 border-1 border-slate-50/10 p-2 rounded-md mt-1 text-white"
               required
             />
           </div>
@@ -78,7 +78,7 @@ export default function Contact() {
               value={formData.email}
               onChange={handleChange}
               placeholder="info@gmail.com"
-              className="w-full bg-[#0d0d0d] border border-gray-700 p-2 rounded-md mt-1 text-white"
+              className="w-full bg-neutral-950  border-1 border-slate-50/10 p-2 rounded-md mt-1 text-white"
               required
             />
           </div>
@@ -93,7 +93,7 @@ export default function Contact() {
             value={formData.subject}
             onChange={handleChange}
             placeholder="Subject"
-            className="w-full bg-[#0d0d0d] border border-gray-700 p-2 rounded-md mt-1 text-white"
+            className="w-full bg-neutral-950 border-1 border-slate-50/10 p-2 rounded-md mt-1 text-white"
             required
           />
         </div>
@@ -107,7 +107,7 @@ export default function Contact() {
             onChange={handleChange}
             placeholder="Hello..."
             rows={4}
-            className="w-full bg-[#0d0d0d] border border-gray-700 p-2 rounded-md mt-1 text-white"
+            className="w-full bg-neutral-950 border-1 border-slate-50/10 p-2 rounded-md mt-1 text-white"
             required
           ></textarea>
         </div>
@@ -122,19 +122,19 @@ export default function Contact() {
       </form>
 
       {/* Contact Info Section */}
-      <div className="mt-14 w-full max-w-2xl flex flex-col md:flex-row justify-between text-gray-400 text-sm gap-4">
+      <div className="mt-14 w-full max-w-3xl flex flex-col md:flex-row justify-between text-gray-400 text-sm gap-4">
         <div>
-          <p className="font-semibold text-white">Join us</p>
+          <p className="font-semibold text-white! mb-2">Join us</p>
           <p>theforgebd@gmail.com</p>
         </div>
 
         <div>
-          <p className="font-semibold text-white">Call</p>
+          <p className="font-semibold text-white! mb-2 ">Call</p>
           <p>+880 1854 666 866</p>
         </div>
 
         <div>
-          <p className="font-semibold text-white">Address</p>
+          <p className="font-semibold text-white! mb-2">Address</p>
           <p>Chattogram, Bangladesh</p>
         </div>
       </div>

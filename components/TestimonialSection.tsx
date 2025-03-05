@@ -40,7 +40,7 @@ const testimonials: Testimonial[] = [
     name: "Sabbir Hossien Robin",
     position: "Founder, DesignMingle",
     image: sabbir,
-    text: "The Forge has been a game-changer for my LinkedIn presence and overall brand growth. His expertise goes beyond just writing—he optimized my LinkedIn profile, ghostwrote for me, created content for both my personal and business pages, wrote my website copy, and even handled some graphic design. His versatility is unmatched.",
+    text: "The Forge has been a game-changer for my LinkedIn presence and overall brand growth. His expertise goes beyond just writing—he optimized my LinkedIn profile, ghostwrote for me, created content for both my personal and business pages. ",
   },
   {
     name: "Orange Crew",
@@ -76,7 +76,7 @@ const testimonials: Testimonial[] = [
     name: "Anwar Hossen",
     position: "Entrepreneur",
     image: person,
-    text: "I had the pleasure of working with The Forge for my website copy and designing, and I couldn't be more impressed. From the very beginning, their dedication and professionalism stood out. They took the time to understand my vision, brand, and audience, crafting copy that felt both strategic and effortless.",
+    text: "I had the pleasure of working with The Forge for my website copy and designing, and I couldn't be more impressed. From the very beginning, their dedication and professionalism stood out.",
   },
 ];
 
@@ -174,7 +174,7 @@ export const TestimonialSection: React.FC = () => {
       >
         {/* Testimonials Container */}
         <div
-          className="flex transition-transform duration-300 ease-in-out gap-6"
+          className="flex transition-transform duration-400 ease-in-out gap-6"
           style={{
             transform: `translateX(-${
               (currentIndex * 100) / testimonialsPerSlide
@@ -185,9 +185,9 @@ export const TestimonialSection: React.FC = () => {
           {[...testimonials, ...testimonials].map((testimonial, index) => (
             <div
               key={index}
-              className="flex-shrink-0 w-full sm:w-[calc(50%-1rem)] md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1rem)] border border-slate-100/5 p-5 rounded-lg bg-black/10 backdrop-blur-md"
+              className="flex-shrink-0 w-full sm:w-[calc(50%-1rem)] md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1rem)] border border-slate-100/5 px-5 rounded-lg bg-black/20 "
             >
-              <div className="flex justify-between items-center mb-4">
+              <div className="flex justify-between items-center my-4">
                 <div className=" text-start">
                   <h3 className=" test-lg" onDragStart={handlePreventSelect}>
                     {testimonial.name}
@@ -210,7 +210,7 @@ export const TestimonialSection: React.FC = () => {
                 />
               </div>
               <div
-                className=" bg-black/10 border border-slate-100/5 rounded-md p-3 text-sm font-light text-left"
+                className=" bg-neutral-950 rounded-md p-3 mb-4 text-sm font-light text-left"
                 onDragStart={handlePreventSelect}
               >
                 <p>

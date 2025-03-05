@@ -1,13 +1,16 @@
 import React from "react";
-import dm from "@/public/dm.svg";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
+import branding from "@/public//work/branding.png";
+import website from "@/public//work/website.png";
+import social_media from "@/public//work/social_media.png";
+
 
 // Define the type for services
 type Work = {
   title: string;
   features: string[];
-  image: string;
+  image: StaticImageData;
 };
 
 // List of services
@@ -15,17 +18,17 @@ const works: Work[] = [
   {
     title: "Branding for an Agency Founder",
     features: ["increase 3x inbound leads", "Brand Optimization"],
-    image: dm,
+    image: branding,
   },
   {
     title: "Website redesign for a real estate agency",
     features: ["Higher Engagement", "More Hooked Calls"],
-    image: dm,
+    image: website,
   },
   {
     title: "Social media strategy for a startup",
     features: ["explosive growth", "brand awareness"],
-    image: dm,
+    image: social_media,
   },
 ];
 
@@ -35,23 +38,23 @@ export const WorkSection = () => {
       <h1 className="text-2xl mb-6 text-center">Our work speaks for itself</h1>
 
       {/*  */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-10 ">
+      <div className="grid grid-cols-1 lg:grid-cols-1 gap-6 mt-10 ">
         {works.map((service, index) => (
           <div
             key={index}
-            className=" border border-slate-50/10 rounded-md p-4 flex flex-col md:flex-row lg:flex-row gap-6"
+            className=" rounded-lg p-6 flex flex-col md:flex-row lg:flex-row gap-6 bg-black/20"
           >
             {/* Image and content container */}
             <div className="flex-1 flex items-center justify-center">
               <Image
                 src={service.image}
                 alt={service.title}
-                className="object-cover w-full h-auto max-h-64 lg:max-h-none"
+                className="object-cover w-full h-96  max-h-64 lg:max-h-none rounded-lg"
               />
             </div>
 
             {/* Content */}
-            <div className="flex-1 flex flex-col justify-between p-4 rounded-md bg-slate-50/2">
+            <div className="flex-1 flex flex-col justify-between p-6 rounded-lg bg-neutral-950">
               <div>
                 <h1 className="text-xl ">{service.title}</h1>
                 <div className="mt-2">

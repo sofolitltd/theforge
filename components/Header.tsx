@@ -23,7 +23,7 @@ export default function Header() {
   }, [isOpen]);
 
   return (
-    <header className="w-full bg-black border-b border-gray-800">
+    <header className="w-full">
       <div className="w-full container mx-auto max-w-7xl p-4 flex items-center justify-between">
         {/* Logo */}
         <Link href="/">
@@ -45,7 +45,7 @@ export default function Header() {
             : "opacity-0 scale-95 pointer-events-none"
         }`}
       >
-        <div className="bg-black border border-gray-700 rounded-xl shadow-lg w-[80%] container mx-auto max-w-7xl p-4">
+        <div className="bg-black border border-gray-700 rounded-xl shadow-lg w-[98%] container mx-auto max-w-7xl p-4">
           {/*  */}
           <ul className="flex flex-col items-start gap-4 text-lg text-white font-outfit mt-2">
             {[

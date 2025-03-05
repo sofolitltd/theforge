@@ -16,8 +16,12 @@ export default function Footer() {
       {/*  */}
       <div className="flex flex-col lg:flex-row container mx-auto max-w-7xl my-6 gap-6 p-4">
         {/*  */}
-        <div className=" flex-2  rounded-xl py-14 px-8 bg-linear-60 from-orange-300 to-pink-500">
-          <p className=" text-sm font-light text-white!">
+
+        <div className="flex-2  p-4 bg-black/20 rounded-lg">
+
+       
+        <div className="  rounded-xl p-14 bg-neutral-950">
+          <p className=" text-sm font-light text-white! mb-1">
             Get a project in mind?
           </p>
           <p className=" text-4xl font-bold text-white!">
@@ -40,7 +44,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-
+ </div>
         {/*  */}
         <div className=" flex-1 rounded-xl bg-black/20 border-1 border-white/5  py-14 px-8 ">
           <Image
@@ -75,7 +79,7 @@ export default function Footer() {
       </div>
 
       {/*  */}
-      <div className=" bg-gray-800 text-white py-4 ">
+      <div className=" text-white py-4 ">
         <div className="container mx-auto max-w-7xl px-4 flex flex-col md:flex-row items-center justify-between">
           <div className="text-center md:text-left mb-2 md:mb-0">
             <p className="text-sm">
