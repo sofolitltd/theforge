@@ -10,6 +10,9 @@ export default function Contact() {
     message: "",
   });
 
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState<{ text: string; type: "success" | "error" } | null>(null);
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -18,41 +21,42 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setLoading(true);
+    setMessage(null); // Reset message before submission
 
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
 
       const result = await response.json();
       if (result.success) {
-        alert("Message sent successfully!");
+        setMessage({ text: "Message sent successfully!", type: "success" });
         setFormData({ name: "", email: "", subject: "", message: "" });
       } else {
-        alert("Failed to send message.");
+        setMessage({ text: "Failed to send message. Please try again.", type: "error" });
       }
     } catch (error) {
       console.log(error);
-      alert("Error sending message.");
+      setMessage({ text: "An error occurred. Please try again later.", type: "error" });
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
     <div className="text-white flex flex-col items-center p-6 font-outfit mb-32">
-      <div className=" items-start w-full max-w-4xl">
+      <div className="items-start w-full max-w-4xl">
         <h2 className="text-2xl">Let’s discuss the details</h2>
-        <p className=" mb-8">Our friendly team would love to hear from you.</p>
-
+        <p className="mb-8">Our friendly team would love to hear from you.</p>
       </div>
 
       {/* Contact Form */}
       <form
         onSubmit={handleSubmit}
-        className="  w-full max-w-4xl p-10 bg-black/20 border-1 border-slate-50/5  rounded-lg"
+        className="w-full max-w-4xl p-10 bg-black/20 border border-slate-50/5 rounded-lg"
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {/* Name */}
@@ -64,7 +68,7 @@ export default function Contact() {
               value={formData.name}
               onChange={handleChange}
               placeholder="Jane Smith"
-              className="w-full bg-neutral-950 border-1 border-slate-50/10 p-2 rounded-md mt-1 text-white"
+              className="w-full bg-neutral-950 border border-slate-50/10 p-2 rounded-md mt-1 text-white"
               required
             />
           </div>
@@ -78,7 +82,7 @@ export default function Contact() {
               value={formData.email}
               onChange={handleChange}
               placeholder="info@gmail.com"
-              className="w-full bg-neutral-950  border-1 border-slate-50/10 p-2 rounded-md mt-1 text-white"
+              className="w-full bg-neutral-950 border border-slate-50/10 p-2 rounded-md mt-1 text-white"
               required
             />
           </div>
@@ -93,7 +97,7 @@ export default function Contact() {
             value={formData.subject}
             onChange={handleChange}
             placeholder="Subject"
-            className="w-full bg-neutral-950 border-1 border-slate-50/10 p-2 rounded-md mt-1 text-white"
+            className="w-full bg-neutral-950 border border-slate-50/10 p-2 rounded-md mt-1 text-white"
             required
           />
         </div>
@@ -107,7 +111,7 @@ export default function Contact() {
             onChange={handleChange}
             placeholder="Hello..."
             rows={4}
-            className="w-full bg-neutral-950 border-1 border-slate-50/10 p-2 rounded-md mt-1 text-white"
+            className="w-full bg-neutral-950 border border-slate-50/10 p-2 rounded-md mt-1 text-white"
             required
           ></textarea>
         </div>
@@ -115,10 +119,26 @@ export default function Contact() {
         {/* Submit Button */}
         <button
           type="submit"
-          className="mt-6 w-full bg-gray-800 hover:bg-gray-700 text-white p-2 rounded-md border border-gray-600 transition"
+          className="mt-8 w-full font-outfit text-base px-6 py-2 border-2 border-white/10 rounded-[10px] bg-gradient-to-r from-[#0e0e0e] via-[#363636] to-[#0e0e0e] text-white opacity-100 flex justify-center items-center"
+          disabled={loading}
         >
-          Submit
+          {loading ? (
+            <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+          ) : (
+            "Submit"
+          )}
         </button>
+
+        {/* Success/Error Message */}
+        {message && (
+          <p
+            className={`mt-4 text-center text-sm ${
+              message.type === "success" ? "text-green-400" : "text-red-400"
+            }`}
+          >
+            {message.text}
+          </p>
+        )}
       </form>
 
       {/* Contact Info Section */}
@@ -129,7 +149,7 @@ export default function Contact() {
         </div>
 
         <div>
-          <p className="font-semibold text-white! mb-2 ">Call</p>
+          <p className="font-semibold text-white! mb-2">Call</p>
           <p>+880 1854 666 866</p>
         </div>
 

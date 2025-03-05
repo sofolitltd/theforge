@@ -16,35 +16,34 @@ export default function Footer() {
       {/*  */}
       <div className="flex flex-col lg:flex-row container mx-auto max-w-7xl my-6 gap-6 p-4">
         {/*  */}
+        <div className="flex-2  p-4 bg-black/20 rounded-lg border-1 border-slate-50/5">
+          <div className="  rounded-xl p-14 bg-neutral-950">
+            <p className=" text-sm font-light text-white! mb-1">
+              Get a project in mind?
+            </p>
+            <p className=" text-4xl font-bold text-white!">
+              {`Lets's discuss the details`}
+            </p>
 
-        <div className="flex-2  p-4 bg-black/20 rounded-lg">
+            <div className="flex gap-4 mt-8 mb-2 items-center ">
+              <div className="w-fit">
+                <Link
+                  href="/work"
+                  className=" text-base font-outfit px-8 py-2.5 border-2 border-gray-300 rounded-lg bg-white text-black "
+                >
+                  Book a call
+                </Link>
+              </div>
 
-       
-        <div className="  rounded-xl p-14 bg-neutral-950">
-          <p className=" text-sm font-light text-white! mb-1">
-            Get a project in mind?
-          </p>
-          <p className=" text-4xl font-bold text-white!">
-            {`Lets's discuss the details`}
-
-          </p>
-
-          <div className="flex gap-4 mt-8 mb-2 items-center ">
-            <div className="w-fit">
               <Link
-                href="/work"
-                className=" text-base font-outfit px-8 py-2.5 border-2 border-gray-300 rounded-lg bg-white text-black "
+                href="/contact"
+                className="font-outfit text-base px-6 py-2 border-2 border-white/10 rounded-[10px]  bg-gradient-to-r from-[#0e0e0e] via-[#363636] to-[#0e0e0e] text-white opacity-100"
               >
-                Book a call
+                Get in touch
               </Link>
-            </div>
-
-            <div className="font-outfit text-base px-6 py-2 border-2 border-white/10 rounded-[10px]  bg-gradient-to-r from-[#0e0e0e] via-[#363636] to-[#0e0e0e] text-white opacity-100">
-              Get in touch
             </div>
           </div>
         </div>
- </div>
         {/*  */}
         <div className=" flex-1 rounded-xl bg-black/20 border-1 border-white/5  py-14 px-8 ">
           <Image
@@ -61,7 +60,7 @@ export default function Footer() {
           </p>
 
           <Link
-            href="https://wa.me/8801854666866?text=Hello, Abdullah"
+            href="https://wa.me/8801854666866?text=Hello"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -83,8 +82,15 @@ export default function Footer() {
         <div className="container mx-auto max-w-7xl px-4 flex flex-col md:flex-row items-center justify-between">
           <div className="text-center md:text-left mb-2 md:mb-0">
             <p className="text-sm">
-              Copyright © {new Date().getFullYear()} The Forge | Developed by
-              Sofol IT
+              Copyright © {new Date().getFullYear()} The Forge | Developed by{"  "}
+              <a
+                href="https://sofolit.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold hover:text-white "
+              >
+                Sofol IT
+              </a>
             </p>
           </div>
           <div className="flex items-center space-x-5">

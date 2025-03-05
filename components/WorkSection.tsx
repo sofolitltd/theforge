@@ -42,7 +42,7 @@ export const WorkSection = () => {
         {works.map((service, index) => (
           <div
             key={index}
-            className=" rounded-lg p-6 flex flex-col md:flex-row lg:flex-row gap-6 bg-black/20"
+            className=" rounded-lg p-6 flex flex-col md:flex-row lg:flex-row gap-6 bg-black/20  border-1 border-slate-50/5 backdrop-blur-"
           >
             {/* Image and content container */}
             <div className="flex-1 flex items-center justify-center">

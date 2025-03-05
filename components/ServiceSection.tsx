@@ -66,25 +66,37 @@ export const ServiceSection = () => {
     <div className="">
       <h1 className="text-2xl mb-6">What we do best & love</h1>
 
-      {/*  */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-10 bg-black/20 rounded-lg  p-4">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-10 bg-black/20 rounded-lg p-6 border-1 border-slate-50/5 backdrop-blur-sm">
         {services.map((service, index) => (
-          <div key={index} className=" bg-neutral-950  rounded-md p-4">
+          <div
+            key={index}
+            className="bg-neutral-950 rounded-md p-4 flex flex-col justify-between h-auto"
+          >
+            {/* Title & Image */}
             <div className="flex gap-4 items-center">
-              <div className=" p-2 border-1 border-neutral-200/10 rounded-lg">
-
-              <Image src={service.image} alt={service.title} height={40} width={40} />
+              {/* Image container with fixed size */}
+              <div className="flex-shrink-0 h-12 w-12 border border-neutral-200/10 rounded-lg p-1">
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  height={40}
+                  width={40}
+                  className="object-cover"
+                />
               </div>
-              <h1 className="text-lg ">{service.title}</h1>
+              {/* Title that can wrap without affecting the image size */}
+              <h1 className="text-lg break-words">{service.title}</h1>
             </div>
 
+            {/* Description */}
             <p className="text-md font-light my-4">{service.description}</p>
 
-            <div className="flex gap-2 flex-wrap">
+            {/* Tags */}
+            <div className="flex gap-2 flex-wrap mt-auto">
               {service.tags.map((tag, tagIndex) => (
                 <div
                   key={tagIndex}
-                  className="bg-gray-50/10 rounded-lg py-1 px-2 w-fit flex items-center gap-2 text-sm"
+                  className="bg-gray-50/5 rounded-lg py-1 px-2 w-fit flex items-center gap-2 text-sm"
                 >
                   <div className="rounded-full bg-slate-200 size-1"></div>
                   <p>{tag}</p>
