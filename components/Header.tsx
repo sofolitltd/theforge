@@ -24,7 +24,7 @@ export default function Header() {
 
   return (
     <header className="w-full">
-      <div className="w-full container mx-auto max-w-7xl p-4 flex items-center justify-between">
+      <div className="w-full container mx-auto max-w-7xl p-4 h-20 flex items-center justify-between">
         {/* Logo */}
         <Link href="/">
           <Image src={logo} alt="The Forge Logo" height={42} width={180} />

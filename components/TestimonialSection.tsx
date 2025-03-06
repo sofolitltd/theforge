@@ -10,7 +10,7 @@ import Image, { StaticImageData } from "next/image";
 import person from "@/public/person.png";
 import sabbir from "@/public/sabbir.png";
 import orange_crew from "@/public/orange_crew.png";
-import sofol_it from "@/public/sofol_it.png";
+import reyad from "@/public/reyad.png";
 import genxsolutions_logo from "@/public/genxsolutions_logo.png";
 import sabbir_hassan from "@/public/sabbir_hassan.jpeg";
 import design_mingle_logo from "@/public/design_mingle_logo.png";
@@ -49,9 +49,9 @@ const testimonials: Testimonial[] = [
     text: "The Forge transformed our brand. From LinkedIn profile optimization to branding, web copy, and logo design, they delivered beyond expectations. Their expertise gave us a cohesive, professional look and helped us attract the right clients.",
   },
   {
-    name: "Sofol IT",
-    position: "Digital Agency",
-    image: sofol_it,
+    name: "Md Asifuzzaman Reyad",
+    position: "Founder, Sofol IT",
+    image: reyad,
     text: "The Forge optimized our LinkedIn presence, making it more professional and engaging. Their strategic content approach has significantly improved our reach and credibility.",
   },
   {
@@ -154,7 +154,7 @@ export const TestimonialSection: React.FC = () => {
 
   return (
     <div className="max-w-full mx-auto py-10 text-center">
-      <h1 className="text-2xl mb-6">What our clients say</h1>
+      <h1 className="text-3xl font-bold mb-6">What our clients say</h1>
 
       <div
         className="relative py-6 rounded-md w-full mx-auto group"

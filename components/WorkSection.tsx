@@ -35,14 +35,14 @@ const works: Work[] = [
 export const WorkSection = () => {
   return (
     <div className=" items-center justify-center w-full bg ">
-      <h1 className="text-2xl mb-6 text-center">Our work speaks for itself</h1>
+      <h1 className="text-3xl font-bold mb-6 text-center">Our work speaks for itself</h1>
 
       {/*  */}
       <div className="grid grid-cols-1 lg:grid-cols-1 gap-6 mt-10 ">
         {works.map((service, index) => (
           <div
             key={index}
-            className=" rounded-lg p-6 flex flex-col md:flex-row lg:flex-row gap-6 bg-black/20  border-1 border-slate-50/5 backdrop-blur-"
+            className=" rounded-lg p-6 flex flex-col md:flex-row lg:flex-row gap-6 bg-black/20  border-1 border-slate-50/5 backdrop-blur-md "
           >
             {/* Image and content container */}
             <div className="flex-1 flex items-center justify-center">
@@ -54,7 +54,7 @@ export const WorkSection = () => {
             </div>
 
             {/* Content */}
-            <div className="flex-1 flex flex-col justify-between p-6 rounded-lg bg-neutral-950">
+            <div className="flex-1 flex flex-col justify-between p-6 rounded-lg bg-neutral-950 ">
               <div>
                 <h1 className="text-xl ">{service.title}</h1>
                 <div className="mt-2">
@@ -81,7 +81,7 @@ export const WorkSection = () => {
       <div className="  mt-10 mx-auto w-fit">
         <Link
           href="/work"
-          className=" text-base font-outfit px-8 py-2.5 border-2 border-gray-300 rounded-md bg-white text-black "
+          className=" text-base font-outfit px-8 py-2.5 border-2 border-gray-300 rounded-md bg-white text-black hover:bg-gradient-to-tr from-purple-700 to-orange-800 hover:text-white"
         >
           View all projects
         </Link>
