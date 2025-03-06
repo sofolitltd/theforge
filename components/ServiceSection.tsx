@@ -91,7 +91,7 @@ export const ServiceSection = () => {
             </div>
 
             {/* Description */}
-            <p className="text-sm md::text-base lg:text-base text-white/80 my-4">
+            <p className="text-sm md::text-base lg:text-base text-white! my-4">
               {service.description}
             </p>
 
@@ -103,7 +103,7 @@ export const ServiceSection = () => {
                   className="bg-gray-50/5 rounded-lg py-1 px-2 w-fit flex items-center gap-2 text-sm"
                 >
                   <div className="rounded-full bg-slate-200 size-1"></div>
-                  <p>{tag}</p>
+                  <p className="text-white/75! font-light text-sm!">{tag}</p>
                 </div>
               ))}
             </div>
