@@ -66,32 +66,32 @@ export const ServiceSection = () => {
     <div className="">
       <h1 className="text-3xl font-bold mb-6">Services we offer</h1>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 mt-10 bg-black/20 rounded-lg p-6 border-1 border-slate-50/5 backdrop-blur-sm">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 mt-10 bg-black/20 rounded-lg p-4 lg:p-6 border border-slate-50/5 backdrop-blur-sm">
         {services.map((service, index) => (
           <div
             key={index}
-            className="bg-neutral-950 rounded-xl px-4 lg:px-8 lg:py-10 flex flex-col justify-between h-auto transition-all duration-1000 ease-in-out hover:bg-gradient-to-tr from-purple-700 to-orange-800"
-            >
+            className="bg-neutral-950 rounded-xl flex flex-col justify-between transition-all duration-1000 ease-in-out hover:bg-gradient-to-r from-[#ba1141] to-[#ffdf8f] p-4 md:p-5 lg:p-6"
+          >
             {/* Title & Image */}
             <div className="flex gap-4 items-center">
               {/* Image container with fixed size */}
-              <div className="flex-shrink-0 size-20 border-2 border-neutral-200/10 rounded-xl p-1">
+              <div className="flex-shrink-0 size-12 lg:size-20 border-2 border-neutral-200/10 rounded-xl p-1">
                 <Image
                   src={service.image}
                   alt={service.title}
-                  height={64}
-                  width={64}
+                  // height={64}
+                  // width={64}
                   className="object-cover"
                 />
               </div>
               {/* Title that can wrap without affecting the image size */}
-              <h1 className="text-2xl font-bold break-words font-outfit!">
+              <h1 className="text-sm md:text-xl lg:text-2xl  font-bold break-words">
                 {service.title}
               </h1>
             </div>
 
             {/* Description */}
-            <p className="text-base text-white/80! my-4">
+            <p className="text-sm md::text-base lg:text-base text-white/80 my-4">
               {service.description}
             </p>
 

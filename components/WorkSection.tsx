@@ -42,7 +42,7 @@ export const WorkSection = () => {
         {works.map((service, index) => (
           <div
             key={index}
-            className=" rounded-lg p-6 flex flex-col md:flex-row lg:flex-row gap-6 bg-black/20  border-1 border-slate-50/5 backdrop-blur-md "
+            className=" rounded-lg p-4 lg:p-6 flex flex-col md:flex-row lg:flex-row gap-6 bg-black/20  border-1 border-slate-50/5 backdrop-blur-md "
           >
             {/* Image and content container */}
             <div className="flex-1 flex items-center justify-center">
@@ -54,10 +54,10 @@ export const WorkSection = () => {
             </div>
 
             {/* Content */}
-            <div className="flex-1 flex flex-col justify-between p-6 rounded-lg bg-neutral-950 ">
+            <div className="flex-1 flex flex-col justify-between p-4 lg:p-6 rounded-lg bg-neutral-950 ">
               <div>
-                <h1 className="text-xl ">{service.title}</h1>
-                <div className="mt-2">
+                <h1 className="text-xl md:text-3xl lg:text-3xl ">{service.title}</h1>
+                <div className="mt-4">
                   {service.features.map((feature, index) => (
                     <div
                       key={index}
@@ -81,7 +81,7 @@ export const WorkSection = () => {
       <div className="  mt-10 mx-auto w-fit">
         <Link
           href="/work"
-          className=" text-base font-outfit px-8 py-2.5 border-2 border-gray-300 rounded-md bg-white text-black hover:bg-gradient-to-tr from-purple-700 to-orange-800 hover:text-white"
+          className=" text-base font-outfit px-8 py-2.5 border-2 border-gray-300 rounded-md bg-white text-black "
         >
           View all projects
         </Link>

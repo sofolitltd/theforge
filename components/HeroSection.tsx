@@ -10,7 +10,7 @@ export const HeroSection = () => {
   return (
     <div className=" space-y-6 max-w-3xl pt-16">
       {/*  */}
-      <h1 className=" text-5xl font-bold">
+      <h1 className=" text-3xl md:text-4xl lg:text-5xl font-bold">
         Build a Brand That Commands Attention, Converts & Scales
       </h1>
 
@@ -23,17 +23,14 @@ export const HeroSection = () => {
 
       {/*  */}
       <Link href="/contact">
-  <div className="flex items-center justify-center gap-3 border-2 border-gray-200 rounded-md bg-white text-black px-6 py-2 w-fit hover:bg-gradient-to-tr from-purple-700 to-orange-800 group transition-all duration-300">
-    {/* Icon */}
-    <PhoneCall width={20} height={20} className="text-black  group-hover:text-white" />
+        <div className=" flex item-center justify-items-center gap-3 border-2 border-gray-200 rounded-md bg-white !text-black px-6 py-2 w-fit">
+          {/*  */}
 
-    {/* Text */}
-    <p className="text-black! group-hover:text-white!">
-      Book a discovery call
-    </p>
-  </div>
-</Link>
-
+          <PhoneCall width={20} height={20} />
+          {/*  */}
+          <p className=" text-[#0a0a0a]!">Book a discovery call</p>
+        </div>
+      </Link>
 
       {/*  */}
 
